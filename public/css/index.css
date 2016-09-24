@@ -1,0 +1,54 @@
+body {
+  color: #000;
+  background-color: #fff;
+}
+body header .main-title {
+  font-size: 40px;
+}
+body header .main-sub-title {
+  font-size: 30px;
+  line-height: 20px;
+}
+body header .navigation {
+  text-align: center;
+}
+body header .navigation .menu {
+  margin-bottom: 0px;
+}
+body header .navigation .section--menu {
+  display: inline-block;
+}
+body .call-us {
+  height: 100px;
+  width: 100%;
+  text-align: right;
+  padding-top: 20px;
+  padding-right: 50px;
+  font-size: 20px;
+}
+body .logo {
+  padding-left: 20px;
+}
+body .screen-1 .imaged-block {
+  position: relative;
+}
+body .screen-1 .imaged-block .overflow-text {
+  position: absolute;
+  left: 50px;
+  top: 100px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 54px;
+  font-weight: 700;
+}
+body .screen-1 .imaged-block .steps .step-1 {
+  padding-left: 0;
+}
+body .screen-1 .imaged-block .steps .step-2 {
+  padding-left: 50px;
+}
+body .screen-1 .imaged-block .steps .step-3 {
+  padding-left: 100px;
+}
+body .screen-1 .imaged-block img {
+  width: 100%;
+}
