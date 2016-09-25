@@ -9,14 +9,37 @@ body header .main-sub-title {
   font-size: 30px;
   line-height: 20px;
 }
-body header .navigation {
+body header .navigation section {
+  width: 100vw;
   text-align: center;
+  display: inline-block;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+body header .navigation section nav {
+  display: inline-block;
+}
+body header .navigation.fixed {
+  position: fixed;
+  background-color: #fff;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100%;
+}
+body header .navigation.fixed section {
+  width: 419px;
+}
+body header .navigation.fixed ~ .holder {
+  display: block;
 }
 body header .navigation .menu {
   margin-bottom: 0px;
 }
-body header .navigation .section--menu {
-  display: inline-block;
+body header .navigation ~ .holder {
+  display: none;
 }
 body .call-us {
   height: 100px;

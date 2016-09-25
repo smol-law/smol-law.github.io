@@ -12,3 +12,26 @@ function init(){
         zoom: 7
     });
 }
+
+
+$(function() {
+  var $window = $(window);
+  var $navigation = $('.navigation');
+  var $section = $('section', $navigation);
+  var navigationOffsetTop = $navigation.offset().top;
+  var $holder = $('.navigation ~ .holder');
+
+  $holder.height($navigation.outerHeight());
+
+  $window.on('scroll', function() {
+    var isFixed = $navigation.hasClass('fixed');
+
+    if ($window.scrollTop() > navigationOffsetTop) {
+      if (!isFixed) {
+        $navigation.addClass('fixed');
+      }
+    } else if (isFixed) {
+      $navigation.removeClass('fixed');
+    }
+  });
+})

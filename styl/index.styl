@@ -8,11 +8,31 @@ body
       font-size: 30px;
       line-height: 20px;
     .navigation
+      section
+        width 100vw;
+        text-align:  center;
+        display: inline-block;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+        nav
+          display: inline-block;
+      &.fixed
+        position: fixed;
+        background-color: white;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        width: 100%;
+        section
+          width 419px
+        & ~ .holder
+          display: block;
       .menu
         margin-bottom: 0px;
-      text-align: center;
-      .section--menu
-        display: inline-block;
+      & ~ .holder
+        display: none;
   .call-us
     height: 100px;
     width: 100%;
