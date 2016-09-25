@@ -9,6 +9,10 @@ body header .main-sub-title {
   font-size: 30px;
   line-height: 20px;
 }
+body header .navigation .call-us {
+  display: none;
+  float: right;
+}
 body header .navigation section {
   width: 100vw;
   text-align: center;
@@ -29,6 +33,14 @@ body header .navigation.fixed {
   z-index: 1;
   width: 100%;
   margin-left: 0px;
+}
+body header .navigation.fixed .call-us {
+  display: block;
+  height: auto;
+  width: auto;
+  position: absolute;
+  right: 0px;
+  top: 0px;
 }
 body header .navigation.fixed section {
   width: 419px;
