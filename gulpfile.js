@@ -15,18 +15,18 @@ gulp.task('stylus', function() {
 });
 
 gulp.task('html', function() {
-  gulp.src('./public/*.html')
+  gulp.src('./*.html')
     .pipe(livereload());
 });
 
 gulp.task('default', ['server'], function() {
   livereload.listen({ basePath: 'public' });
   gulp.watch('./styl/*.styl', ['stylus']);
-  gulp.watch('./public/*.html', ['html']);
+  gulp.watch('./*.html', ['html']);
 });
 
 gulp.task('server', function(done) {
   http.createServer(
-    st({ path: __dirname + '/public', index: 'index.html', cache: false })
+    st({ path: __dirname, index: 'index.html', cache: false })
   ).listen(3000, done);
 });
