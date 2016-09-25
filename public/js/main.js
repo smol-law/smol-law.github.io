@@ -66,11 +66,17 @@ $(function() {
         scrollTo = target.offset().top;
       }
 
+      $('nav.menu').hide();
+
       $('html, body').animate({
         scrollTop: scrollTo
       }, 250);
       return false;
     }
   });
+
+  $('.menu-toggle').click(function() {
+    $('nav.menu').toggle();
+  })
 
 })

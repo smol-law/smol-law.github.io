@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 // Собираем Stylus
 gulp.task('stylus', function() {
-    gulp.src('./styl/*.styl')
+    gulp.src('./styl/index.styl')
         .pipe(stylus()) // собираем stylus
     .on('error', console.log) // Если есть ошибки, выводим и продолжаем
     // .pipe(myth()) // добавляем префиксы - http://www.myth.io/

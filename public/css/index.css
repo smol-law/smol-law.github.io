@@ -22,6 +22,10 @@ body header .navigation section {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
+body header .navigation section .menu-toggle {
+  font-size: 32px;
+  display: none;
+}
 body header .navigation section nav {
   display: inline-block;
 }
@@ -91,4 +95,53 @@ body .screen-1 .imaged-block .steps .step-3 {
 }
 body .screen-1 .imaged-block img {
   width: 100%;
+}
+@media screen and (max-width: 880px) {
+  body header .main-title {
+    font-size: 24px;
+  }
+  body header .main-sub-title {
+    font-size: 18px;
+  }
+  body header .call-us {
+    height: auto;
+  }
+  body header .navigation.fixed nav.menu {
+    top: 60px;
+  }
+  body header .navigation.fixed section {
+    width: 46px;
+    height: 60px;
+  }
+  body header .navigation.fixed section .menu-toggle {
+    padding-top: 10px;
+    position: static;
+    right: auto;
+    top: 0;
+    display: block;
+  }
+  body header .navigation section {
+    -webkit-transition: none 0.25s ease-in-out;
+    -moz-transition: none 0.25s ease-in-out;
+    -o-transition: none 0.25s ease-in-out;
+    transition: none 0.25s ease-in-out;
+  }
+  body header .navigation section .menu-toggle {
+    position: absolute;
+    right: 20px;
+    top: -100px;
+    display: block;
+  }
+  body header .navigation section nav.menu {
+    display: none;
+    position: fixed;
+    top: 0px;
+    background-color: #fff;
+    z-index: 1;
+    width: 100vw;
+  }
+  body .screen-1 .imaged-block .overflow-text {
+    top: 10px;
+    font-size: 24px;
+  }
 }
