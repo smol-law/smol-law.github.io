@@ -34,4 +34,23 @@ $(function() {
       $navigation.removeClass('fixed');
     }
   });
+
+  $('a[href*="#"]').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      var scrollTo = 0;
+
+      if (target.length) {
+        scrollTo = target.offset().top;
+      }
+
+      console.log(scrollTo)
+
+      $('html, body').animate({
+        scrollTop: scrollTo
+      }, 250);
+      return false;
+    }
+  });
+
 })

@@ -23,11 +23,12 @@ body header .navigation section nav {
 }
 body header .navigation.fixed {
   position: fixed;
-  background-color: #fff;
+  background-color: #f4f4f4;
   top: 0px;
   left: 0px;
   z-index: 1;
   width: 100%;
+  margin-left: 0px;
 }
 body header .navigation.fixed section {
   width: 419px;
@@ -40,6 +41,10 @@ body header .navigation .menu {
 }
 body header .navigation ~ .holder {
   display: none;
+}
+body main h3 {
+  padding-top: 35px;
+  margin-top: -15px;
 }
 body .call-us {
   height: 100px;
