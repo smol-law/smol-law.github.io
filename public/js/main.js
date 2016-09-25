@@ -25,13 +25,35 @@ $(function() {
 
   $window.on('scroll', function() {
     var isFixed = $navigation.hasClass('fixed');
+    var windowScrollTop = $window.scrollTop();
 
-    if ($window.scrollTop() > navigationOffsetTop) {
+    if (windowScrollTop > navigationOffsetTop) {
       if (!isFixed) {
         $navigation.addClass('fixed');
       }
     } else if (isFixed) {
       $navigation.removeClass('fixed');
+    }
+    var positionMap = {};
+
+    $('h3[id]').each(function(index, item) {
+      positionMap[item.id] = $(item).offset().top;
+    });
+
+    var currentActive = null;
+
+    for (var hash in positionMap) {
+      if (positionMap[hash] > windowScrollTop) {
+        $('.menu__item').removeClass('menu__item--current');
+        $('a[href="#' + hash + '"]').parent('.menu__item').addClass('menu__item--current');
+        currentActive = hash;
+        break;
+      }
+    }
+
+    if (currentActive === null) {
+      $('.menu__item').removeClass('menu__item--current');
+      $('a[href="#"]').parent('.menu__item').addClass('menu__item--current');
     }
   });
 
@@ -43,8 +65,6 @@ $(function() {
       if (target.length) {
         scrollTo = target.offset().top;
       }
-
-      console.log(scrollTo)
 
       $('html, body').animate({
         scrollTop: scrollTo
