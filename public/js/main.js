@@ -37,13 +37,18 @@ $(function() {
     var positionMap = {};
 
     $('h3[id]').each(function(index, item) {
-      positionMap[item.id] = $(item).offset().top;
+      var parentScreen = $(item).parents("div[class^='screen-']");
+      if (!parentScreen.length) {
+        return;
+      }
+
+      positionMap[item.id] = $(parentScreen).offset().top + $(parentScreen).height() - 64; // menu height
     });
 
     var currentActive = null;
 
     for (var hash in positionMap) {
-      if (positionMap[hash] > windowScrollTop) {
+      if (positionMap[hash] >= windowScrollTop) {
         $('.menu__item').removeClass('menu__item--current');
         $('a[href="#' + hash + '"]').parent('.menu__item').addClass('menu__item--current');
         currentActive = hash;
@@ -63,10 +68,8 @@ $(function() {
       var scrollTo = 0;
 
       if (target.length) {
-        scrollTo = target.offset().top;
+        scrollTo = target.offset().top - 64 + 35; // header height + 35 margin top
       }
-
-      $('nav.menu').hide();
 
       $('html, body').animate({
         scrollTop: scrollTo
